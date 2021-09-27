@@ -4,7 +4,7 @@ Actually, Bashline was made do be used in [Termux](https://wiki.termux.com/wiki/
 ## How to install?
 ```bash
 curl https://raw.githubusercontent.com/davideca27/bashline/main/bashline_installer.sh -O $HOME/bashline_installer.sh \
-    && bashline_installer.sh
+    && bash bashline_installer.sh
 ```
 ### ⚠ Warning
 Bashline is in Beta, it can have some bugs. Help me with pull-requests if you have an good idea or bug fix 😄

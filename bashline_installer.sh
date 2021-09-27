@@ -7,8 +7,8 @@
 
 function check_depends {
     MD=0
-    [[ $(type -f bash) ]] || {printf "Missing dependency: bash" && MD=1}
-    [[ $(type -f git) ]]  || {printf "Missing dependency: git"  && MD=1}
+    [[ $(type -f bash) ]] || { printf "Missing dependency: bash" && MD=1 ;}
+    [[ $(type -f git) ]]  || { printf "Missing dependency: git"  && MD=1 ;}
 
     [[ $MD -ne 0 ]] && exit 1
 }

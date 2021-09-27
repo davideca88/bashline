@@ -3,7 +3,7 @@ Bashline is a bash theme that was inspired by the powerline / powerlevel10k for 
 Actually, Bashline was made do be used in [Termux](https://wiki.termux.com/wiki/Main_Page), but i want to port this for another unix-like systems.
 ## How to install?
 ```bash
-curl https://raw.githubusercontent.com/davideca27/bashline/main/bashline_installer.sh -O $HOME/bashline_installer.sh \
+curl -s https://raw.githubusercontent.com/davideca27/bashline/main/bashline_installer.sh -o $HOME/bashline_installer.sh \
     && bash bashline_installer.sh
 ```
 ### ⚠ Warning

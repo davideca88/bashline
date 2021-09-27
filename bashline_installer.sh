@@ -1,4 +1,8 @@
-#!/data/data/com.termux/files/usr/bin/bash
+# BASHLINE --------------------------
+# By: <https://github.com/davideca27>
+#     <https://youtube.com/davideca>
+# LICENSE: GPL-3.0
+#------------------------------------
 
 function check_depends {
     MD=0

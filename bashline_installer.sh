@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/data/data/com.termux/files/usr/bin/env bash
 
 function check_depends {
     MD=0
@@ -15,7 +15,7 @@ function install_fonts {
         printf "(If you don't undertand the above, say Y)\n"
         printf "Want to continue? [Y/n]: "
             read resp
-        if [[ $resp != "Y" ]] || [[ $resp != "y" ]]; then
+        if [[ $resp = "n" ]]; then
             printf "Aborting installation of font.\n"
             return
         fi
@@ -36,10 +36,11 @@ function create_dir {
 }
 
 function cp_files {
-    curl https://raw.githubusercontent.com/davideca27/bashline/main/files/bashline.sh \
+    curl -s https://raw.githubusercontent.com/davideca27/bashline/main/files/bashline.sh \
         > $HOME/.config/bashline/bashline.sh
-    curl https://raw.githubusercontent.com/davideca27/bashline/main/files/_bashrc     \
+    curl -s https://raw.githubusercontent.com/davideca27/bashline/main/files/_bashrc     \
         >> $HOME/.bashrc
+    chmod +x $HOME/.config/bashline/bashline.sh
 }
 check_depends
 install_fonts

@@ -36,36 +36,11 @@ function create_dir {
 }
 
 function cp_files {
-BASHLINE_SH='
-STATUS=$1
-function shell_status { 
-    [[ $STATUS != "0"  ]] &&			\
-    printf "\[\e[1;31m\][$STATUS]\[\e[0;00m\]" 
-} 
-
-function distro_icon { 
-   printf "\[\e[1;32m\]\uf531\[\e[00m\]" 
-} 
-
-function git_branch { 
-    BRANCH="\ue725 $(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2)" 
-    [[ $(git branch 2>/dev/null) ]] && printf " at \[\e[32m\]$BRANCH\[\e[0m\] " || return 0 
-} 
-
-printf "$(distro_icon):\[\e[1;34m\]\w\[\e[00m\]$(git_branch)$(shell_status)\$ " 
-'
-
-_BASHRC='
-# BASHLINE CONFIGS
-
-function prompt_command {
-    STATUS=$?
-    export PS1=$($HOME/.config/bashline/bashline.sh $STATUS)
+    curl https://raw.githubusercontent.com/davideca27/bashline/main/files/bashline.sh \
+        > $HOME/.config/bashline/bashline.sh
+    curl https://raw.githubusercontent.com/davideca27/bashline/main/files/_bashrc     \
+        >> $HOME/.bashrc
 }
-
-export PROMPT_COMMAND=prompt_command
-'
-
 check_depends
 install_fonts
 create_dir

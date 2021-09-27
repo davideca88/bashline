@@ -1,6 +1,8 @@
+# BASHLINE config
 function prompt_command {
     STATUS=$?
     export PS1=$($HOME/.config/bashline/bashline.sh $STATUS)
 }
 
 export PROMPT_COMMAND=prompt_command
+# end of BASHLINE config

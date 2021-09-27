@@ -1,4 +1,4 @@
-
+#!/data/data/com.termux/files/usr/bin/bash
 # BASHLINE --------------------------
 # By: <https://github.com/davideca27>
 #     <https://youtube.com/davideca>
@@ -26,7 +26,7 @@ function install_fonts {
         fi
 
         curl https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf \
-            -O $HOME/.termux/font.ttf
+            -o $HOME/.termux/font.ttf
     else
         printf "\e[1;32mInstalling Meslo Nerdfont\e[m\n"
         mkdir -p $HOME/.local/share/fonts/

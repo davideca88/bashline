@@ -26,12 +26,12 @@ function install_fonts {
             return
         fi
 
-        curl https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf \
-            -o $HOME/.termux/font.ttf
+        wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf \
+            -O $HOME/.termux/font.ttf
     else
         printf "\e[1;32mInstalling Meslo Nerdfont\e[m\n"
         mkdir -p $HOME/.local/share/fonts/
-        curl https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf \
+        wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf \
             -O $HOME/.local/share/fonts/MesloLGS\ NF\ Regular.ttf
         printf "Set your Terminal Font as \"MesloLGS NF Regular\""
     fi

@@ -1,11 +1,12 @@
 STATUS=$1
 function shell_status {
-    [[ $STATUS != "0"  ]] &&			\
-    printf "\[\e[1;31m\][$STATUS]\[\e[0;00m\]"
+    [[ $STATUS != "0"  ]] && \
+        printf "\[\e[1;31m\][$STATUS]\[\e[0;00m\]"
 }
 
 function distro_icon {
-    printf "\[\e[1;32m\]\uf531\[\e[00m\]"
+	[[ $(uname -o) = "Android" ]] && printf "\[\e[1;32m\]\uf531\[\e[m\]"
+	[[ $(uname -n) = "arch" ]]    && printf "\[\e[1;38;5;27m\]\uf303\[\e[m\]"
 }
 
 function git_branch {
